@@ -1,0 +1,26 @@
+{
+    "name": "tp02-commande-gateau",
+    "version": "1.0.0",
+    "description": "TP02 Cake Ordering System",
+    "main": "dist/app.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/app.js",
+        "dev": "ts-node src/app.ts"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.3",
+        "express": "^4.18.2",
+        "mongoose": "^9.1.5"
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.19.6",
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.0.10",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    }
+}

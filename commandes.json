@@ -1,0 +1,24 @@
+[
+  {
+    "base": "chocolat",
+    "glacage": "vanille",
+    "creme": "non",
+    "cerise": "oui",
+    "prix": 15,
+    "nom": "Test User",
+    "adresse": "123 Test St",
+    "date": "2025-12-07T00:24:20.938Z",
+    "id": 1765067060976
+  },
+  {
+    "base": "chocolat",
+    "glacage": "vanille",
+    "creme": "non",
+    "cerise": "non",
+    "prix": 14,
+    "nom": "sakeng",
+    "adresse": "925 rue hypolite Bernier ",
+    "date": "2025-12-07T00:27:11.657Z",
+    "id": 1765067231660
+  }
+]

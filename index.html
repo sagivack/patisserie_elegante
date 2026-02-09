@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau sur Mesure - Pâtisserie Élégance</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-page="home">
+                <i class="fa-solid fa-cake-candles me-2"></i> PÂTISSERIE ÉLÉGANCE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-page="home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="order">Commander</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="history">Historique</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page: Accueil -->
+    <section id="home-page" class="page-section active">
+        <div class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1 class="display-3 mb-4 animate-fade-up">L'Art de la Pâtisserie</h1>
+                <p class="lead mb-5 animate-fade-up delay-1">Créez le gâteau de vos rêves, ingrédient par ingrédient.
+                </p>
+                <button class="btn btn-primary btn-lg animate-fade-up delay-2" data-page="order">Commencer la
+                    Création</button>
+            </div>
+        </div>
+        <div class="container py-5">
+            <div class="row align-items-center my-5">
+                <div class="col-md-6">
+                    <h2 class="section-title mb-4">Notre Passion</h2>
+                    <p class="text-muted">Depuis 2025, nous nous engageons à offrir des expériences gustatives
+                        inoubliables. Nos ingrédients sont sélectionnés avec soin pour garantir une qualité
+                        exceptionnelle. Personnalisez votre gâteau et laissez-nous réaliser votre vision.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="p-5 bg-light rounded-3 shadow-sm">
+                        <i class="fa-solid fa-star fa-3x text-warning mb-3"></i>
+                        <h3>Qualité Artisanale</h3>
+                        <p>Fait main avec amour et précision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page: Commande -->
+    <section id="order-page" class="page-section d-none">
+        <div class="container py-5 mt-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Créez Votre Gâteau</h2>
+                <p class="text-muted">Laissez libre cours à votre imagination.</p>
+            </div>
+
+            <div class="row g-5">
+                <!-- Cake Visualizer -->
+                <div class="col-lg-6">
+                    <div class="cake-preview-container sticky-top" style="top: 100px;">
+                        <div class="cake-stage-container">
+                            <div class="cake-stage" id="cake-container">
+                                <div id="cake-visual" class="cake-visual"></div>
+                            </div>
+                        </div>
+                        <div class="controls-3d mt-3 px-5">
+                            <label for="rotation-slider" class="form-label text-muted small"><i
+                                    class="fa-solid fa-rotate"></i> Rotation 3D</label>
+                            <input type="range" class="form-range" id="rotation-slider" min="0" max="360" value="0">
+                        </div>
+                        <div class="price-tag mt-3 text-center">
+                            <span class="h4">Prix estimé: <span id="total-price">0</span> $</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <div class="col-lg-6">
+                    <form id="cake-form" class="p-4 bg-white shadow-sm rounded-3 border">
+                        <h4 class="mb-4 font-serif">Personnalisation</h4>
+
+                        <!-- 1. Base & Forme -->
+                        <div class="mb-4">
+                            <h5 class="text-secondary border-bottom pb-2">1. Base & Forme</h5>
+
+                            <label class="form-label mt-2 fw-bold">Forme du Gâteau</label>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="forme" id="forme-rond"
+                                        value="rond" checked>
+                                    <label class="form-check-label" for="forme-rond">Rond</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="forme" id="forme-carre"
+                                        value="carre">
+                                    <label class="form-check-label" for="forme-carre">Carré</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="forme" id="forme-rectangle"
+                                        value="rectangle">
+                                    <label class="form-check-label" for="forme-rectangle">Rectangle</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="forme" id="forme-coeur"
+                                        value="coeur">
+                                    <label class="form-check-label" for="forme-coeur">Cœur</label>
+                                </div>
+                            </div>
+
+                            <label class="form-label fw-bold">Parfum / Couleur Base</label>
+                            <div class="row g-2 align-items-center">
+                                <div class="col-8">
+                                    <select class="form-select" id="base-select">
+                                        <option value="vanille" data-color="#f3e5ab" selected>Vanille (10$)</option>
+                                        <option value="chocolat" data-color="#795548">Chocolat (11$)</option>
+                                        <option value="custom" data-price="12">Personnalisé (12$)</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <input type="color" class="form-control form-control-color w-100" id="base-color"
+                                        value="#f3e5ab" title="Choisir la couleur">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Glaçage -->
+                        <div class="mb-4">
+                            <h5 class="text-secondary border-bottom pb-2">2. Glaçage</h5>
+                            <label class="form-label mt-2 fw-bold">Type de Glaçage</label>
+                            <select class="form-select" id="glacage-select">
+                                <option value="" selected>Aucun</option>
+                                <option value="chocolat" data-price="3">Chocolat (+3$)</option>
+                                <option value="vanille" data-price="3">Vanille (+3$)</option>
+                                <option value="fraise" data-price="3">Fraise (+3$)</option>
+                            </select>
+                        </div>
+
+                        <!-- 3. Décorations -->
+                        <div class="mb-4">
+                            <h5 class="text-secondary border-bottom pb-2">3. Décorations</h5>
+
+                            <label class="form-label mt-2 fw-bold">Suppléments</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check-creme" data-price="2">
+                                <label class="form-check-label" for="check-creme">Crème Fouettée (+2$)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check-cerise" data-price="1">
+                                <label class="form-check-label" for="check-cerise">Cerise (+1$)</label>
+                            </div>
+
+                            <label class="form-label mt-3 fw-bold">Message sur le gâteau (+2$)</label>
+                            <input type="text" class="form-control mb-2" id="cake-text"
+                                placeholder="Joyeux Anniversaire..." maxlength="20">
+                            <input type="color" class="form-control form-control-color w-100" id="text-color"
+                                value="#000000" title="Couleur du texte">
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-4 font-serif">Vos Coordonnées</h4>
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom Complet</label>
+                            <input type="text" class="form-control" id="nom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adresse" class="form-label">Adresse de Livraison</label>
+                            <textarea class="form-control" id="adresse" rows="2" required></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                            <button type="reset" class="btn btn-outline-secondary me-md-2">Annuler</button>
+                            <button type="button" class="btn btn-primary" id="btn-submit">Commander</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page: Historique -->
+    <section id="history-page" class="page-section d-none">
+        <div class="container py-5 mt-5">
+            <h2 class="section-title text-center mb-5">Historique des Commandes</h2>
+            <div id="orders-list" class="row g-4">
+                <!-- Orders will be injected here -->
+                <div class="col-12 text-center text-muted">
+                    <p>Chargement des commandes...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 mt-auto">
+        <div class="container text-center">
+            <div class="mb-4 social-icons">
+                <a href="#" class="mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="mb-1">123 Rue de la Pâtisserie, Ville des Délices</p>
+            <p class="small text-muted">&copy; 2025 Pâtisserie Élégance. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="Scripts/main.js"></script>
+</body>
+
+</html>
